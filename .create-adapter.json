@@ -1,0 +1,35 @@
+{
+	"cli": true,
+	"adapterName": "ems-esp-gw",
+	"title": "EMS-ESP-Gateway",
+	"description": "EEG",
+	"expert": "no",
+	"features": [
+		"adapter",
+		"vis"
+	],
+	"adminFeatures": [],
+	"type": "metering",
+	"startMode": "daemon",
+	"connectionType": "cloud",
+	"dataSource": "poll",
+	"connectionIndicator": "no",
+	"language": "JavaScript",
+	"adminReact": "no",
+	"tools": [
+		"ESLint",
+		"type checking"
+	],
+	"indentation": "Tab",
+	"quotes": "single",
+	"es6class": "yes",
+	"authorName": "Stefan",
+	"authorGithub": "stmb-100",
+	"authorEmail": "github@stmb-mail.de",
+	"gitRemoteProtocol": "HTTPS",
+	"gitCommit": "no",
+	"license": "GNU AGPLv3",
+	"ci": "gh-actions",
+	"dependabot": "no",
+	"creatorVersion": "1.33.0"
+}
