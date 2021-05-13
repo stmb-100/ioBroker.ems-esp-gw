@@ -1,21 +1,26 @@
 {
 	"common": {
-		"name": "ems-esp-gw",
-		"version": "0.0.1",
+		"name": "EMS-ESP-GW",
+		"version": "0.0.4",
 		"news": {
+			"0.0.4": {
+			  "en": "Fixed release",
+			  "de": "Fixed Release"
+			},
 			"0.0.1": {
 				"en": "initial release",
 				"de": "Erstveröffentlichung"			
-			}
+			}	
 		},
+		"title": "EMS-ESP-GW",
 		"titleLang": {
-			"en": "EMS-ESP-Gateway",
-			"de": "EMS-ESP-Gateway"
+			"en": "EMS-ESP-GW",
+			"de": "EMS-ESP-GW"
 		},
 		"desc": {
-			"en": "EEG",
-			"de": "EEG"
-		},
+			"en": "Loads current EMS-EPS-GW data from a local or remote sensor",
+			"de": "Lädt aktuelle EMS-ESP-GW eines lokalen oder Cloud-Sensors"
+		  },
 		"authors": [
 			"Stefan <github@stmb-mail.de>"
 		],
@@ -25,11 +30,11 @@
 			"Smart Home",
 			"home automation"
 		],
-		"license": "non Licence",
+		"license": "MIT",
 		"platform": "Javascript/Node.js",
 		"icon": "ems-esp-gw.png",
 		"enabled": true,
-		"extIcon": "https://raw.githubusercontent.com/stmb-100/ioBroker.ems-esp-gw/master/admin/ems-esp-gw.png",
+		"extIcon": "https://github.com/stmb-100/ioBroker.ems-esp-gw/blob/16c0e66325e9e91536a249fc78f445c5309f48d4/admin/ems-esp-gw.png",
 		"readme": "https://github.com/stmb-100/ioBroker.ems-esp-gw/blob/master/README.md",
 		"loglevel": "info",
 		"restartAdapters": [
