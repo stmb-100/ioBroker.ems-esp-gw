@@ -1,9 +1,9 @@
 {
 	"common": {
-		"name": "ems-esp-gw",
-		"version": "0.0.6",
+		"name": "EMS-ESP-GW",
+		"version": "0.0.4",
 		"news": {
-			"0.0.5": {
+			"0.0.4": {
 			  "en": "Fixed release",
 			  "de": "Fixed Release"
 			},
@@ -43,9 +43,9 @@
 		"localLinks": {
 			"_default": "%web_protocol%://%ip%:%web_port%/vis/edit.html"
 		},
-		"mode": "schedule",   
-        "schedule": "*/5 * * * *",
-		"allowInit": true,
+		"mode": "schedule",
+        "allowInit": true,
+        "schedule": "*/30 * * * *",
 		"type": "metering",
 		"compact": true,
 		"connectionType": "cloud",

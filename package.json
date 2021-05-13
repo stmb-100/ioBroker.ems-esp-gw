@@ -1,13 +1,13 @@
 {
-  "name": "iobroker.ems-esp-gw",
-  "version": "0.0.1",
+  "name": "ems-esp-gw",
+  "version": "0.0.6",
   "description": "EEG",
   "author": {
     "name": "Stefan",
     "email": "github@stmb-mail.de"
   },
   "homepage": "https://github.com/stmb-100/ioBroker.ems-esp-gw",
-  "license": "AGPL-3.0",
+  "license": "",
   "keywords": [
     "ioBroker",
     "template",
