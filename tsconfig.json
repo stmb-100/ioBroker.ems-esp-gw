@@ -1,4 +1,5 @@
 // Root tsconfig to set the settings and power editor support for all TS files
+//
 {
 	"compileOnSave": true,
 	"compilerOptions": {

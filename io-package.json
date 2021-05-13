@@ -5,40 +5,16 @@
 		"news": {
 			"0.0.1": {
 				"en": "initial release",
-				"de": "Erstveröffentlichung",
-				"ru": "Начальная версия",
-				"pt": "lançamento inicial",
-				"nl": "Eerste uitgave",
-				"fr": "Première version",
-				"it": "Versione iniziale",
-				"es": "Versión inicial",
-				"pl": "Pierwsze wydanie",
-				"zh-cn": "首次出版"
+				"de": "Erstveröffentlichung"			
 			}
 		},
 		"titleLang": {
 			"en": "EMS-ESP-Gateway",
-			"de": "EMS-ESP-Gateway",
-			"ru": "EMS-ESP-шлюз",
-			"pt": "EMS-ESP-Gateway",
-			"nl": "EMS-ESP-Gateway",
-			"fr": "Passerelle EMS-ESP",
-			"it": "Gateway EMS-ESP",
-			"es": "Puerta de enlace EMS-ESP",
-			"pl": "Bramka EMS-ESP",
-			"zh-cn": "EMS-ESP-网关"
+			"de": "EMS-ESP-Gateway"
 		},
 		"desc": {
 			"en": "EEG",
-			"de": "EEG",
-			"ru": "ЭЭГ",
-			"pt": "EEG",
-			"nl": "EEG",
-			"fr": "EEG",
-			"it": "EEG",
-			"es": "Electroencefalograma",
-			"pl": "EEG",
-			"zh-cn": "脑电图"
+			"de": "EEG"
 		},
 		"authors": [
 			"Stefan <github@stmb-mail.de>"
@@ -49,7 +25,7 @@
 			"Smart Home",
 			"home automation"
 		],
-		"license": "AGPL-3.0",
+		"license": "non Licence",
 		"platform": "Javascript/Node.js",
 		"icon": "ems-esp-gw.png",
 		"enabled": true,
