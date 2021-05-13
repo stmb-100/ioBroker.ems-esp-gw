@@ -19,7 +19,7 @@ class EmsEspGw extends utils.Adapter {
 	constructor(options) {
 		super({
 			...options,
-			name: 'ems-esp-gw',
+			name: 'iobroker.ems-esp-gw',
 		});
 		this.on('ready', this.onReady.bind(this));
 		this.on('stateChange', this.onStateChange.bind(this));
