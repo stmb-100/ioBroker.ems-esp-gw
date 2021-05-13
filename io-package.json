@@ -34,7 +34,7 @@
 		"platform": "Javascript/Node.js",
 		"icon": "ems-esp-gw-2.png",
 		"enabled": true,
-		"extIcon": "https://github.com/stmb-100/ioBroker.ems-esp-gw/blob/16c0e66325e9e91536a249fc78f445c5309f48d4/admin/ems-esp-gw-2.png",
+		"extIcon": "https://github.com/stmb-100/ioBroker.ems-esp-gw/blob/30998a7062f3be807de260d32f2048212813919d/admin/ems-esp-gw.png",
 		"readme": "https://github.com/stmb-100/ioBroker.ems-esp-gw/blob/master/README.md",
 		"loglevel": "info",
 		"restartAdapters": [
