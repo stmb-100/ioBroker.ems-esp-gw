@@ -1,8 +1,12 @@
 {
 	"common": {
 		"name": "iobroker.ems-esp-gw",
-		"version": "0.0.9",
+		"version": "0.0.10",
 		"news": {
+			"0.0.10": {
+				"en": "Web Site Configuration",
+				"de": "Web Seite Konfiguration"
+			  },  
 			"0.0.8": {
 			  "en": "Fixed release",
 			  "de": "Fixed Release"
@@ -61,11 +65,11 @@
 	},
 	"native": {
 		"option1": true,
-		"option2": true,
+		"option2": false,
 		"option3": false,
-		"option4": true,
-		"option5": false,
-		"input1": "192.168.",
+		"option4": false,
+		"option5": true,
+		"input1": "192.168.0.",
 		"input2": "80",
 		"input3": "leer"
 	},
