@@ -19,7 +19,7 @@ class EmsEspGw extends utils.Adapter {
 	constructor(options) {
 		super({
 			...options,
-			name: 'iobroker.ems-esp-gw',
+			name: 'ems-esp-gw',
 		});
 		this.on('ready', this.onReady.bind(this));
 		this.on('stateChange', this.onStateChange.bind(this));
@@ -38,6 +38,12 @@ class EmsEspGw extends utils.Adapter {
 		// this.config:
 		this.log.info('config option1: ' + this.config.option1);
 		this.log.info('config option2: ' + this.config.option2);
+		this.log.info('config option3: ' + this.config.option3);
+		this.log.info('config option4: ' + this.config.option4);
+		this.log.info('config option5: ' + this.config.option5);
+		this.log.info('config input1: ' + this.config.input1);
+		this.log.info('config input2: ' + this.config.input2);
+		
 
 		/*
 		For every state in the system there has to be also an object of type state

@@ -1,9 +1,9 @@
 {
 	"common": {
 		"name": "iobroker.ems-esp-gw",
-		"version": "0.0.6",
+		"version": "0.0.9",
 		"news": {
-			"0.0.5": {
+			"0.0.8": {
 			  "en": "Fixed release",
 			  "de": "Fixed Release"
 			},
@@ -36,7 +36,7 @@
 		"enabled": true,
 		"extIcon": "https://github.com/stmb-100/ioBroker.ems-esp-gw/blob/main/admin/ems-esp-gw-2.png",
 		"readme": "https://github.com/stmb-100/ioBroker.ems-esp-gw/blob/main/README.md",
-		"loglevel": "debug",
+		"loglevel": "info",
 		"restartAdapters": [
 			"vis"
 		],
@@ -61,7 +61,13 @@
 	},
 	"native": {
 		"option1": true,
-		"option2": "42"
+		"option2": true,
+		"option3": false,
+		"option4": true,
+		"option5": false,
+		"input1": "192.168.",
+		"input2": "80",
+		"input3": "leer"
 	},
 	"objects": [],
 	"instanceObjects": []

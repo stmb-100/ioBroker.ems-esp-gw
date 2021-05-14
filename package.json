@@ -1,8 +1,8 @@
 {
   "name": "iobroker.ems-esp-gw",
-  "raw": "iobroker.ems-esp-gw@0.0.6",
+  "raw": "iobroker.ems-esp-gw@0.0.9",
   "_location": "/iobroker.ems-esp-gw",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "EEG",
   "author": {
     "name": "Stefan",
