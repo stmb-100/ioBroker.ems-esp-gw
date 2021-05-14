@@ -8,6 +8,10 @@
 // you need to create an adapter
 const utils = require('@iobroker/adapter-core');
 var request = require('request');
+const axios = require('axios');
+const path = '' ;
+var obj = '';
+var obj2 = '';
 
 // Load your modules here, e.g.:
 // const fs = require("fs");
@@ -27,12 +31,15 @@ class EmsEspGw extends utils.Adapter {
 		// this.on('objectChange', this.onObjectChange.bind(this));
 		// this.on('message', this.onMessage.bind(this));
 		this.on('unload', this.onUnload.bind(this));
+        
+		this.killTimeout = null;
 	}
 
 	/**
 	 * Is called when databases are connected and adapter received configuration.
 	 */
-	async onReady() {
+	async onReady() 
+	{
 		// Initialize your adapter here
 
 		// The adapters config (in the instance object everything under the attribute "native") is accessible via
@@ -51,46 +58,323 @@ class EmsEspGw extends utils.Adapter {
 		this.log.debug(configIPAdr);
 		this.log.debug(configIPPort);
 
+		var options = {
+			url: "http://" + configIPAdr + "/api?device=dallassensor&cmd=info",
+			json: true
+		};
+		
+		this.log.info(options.url);
+		this.log.info(options.json);
+
 		if (this.config.option1 == true){
+			this.log.info('get System Data');			
+
+			axios({
+				method: 'get',
+				baseURL: 'http://' + configIPAdr + '/',
+				url: '/api?device=system&cmd=info',
+				responseType: 'json'
+			}).then(
+				async (response) => {
+					const content = response.data;
+
+					this.log.info('local request done');
+					this.log.info(JSON.stringify(content));
+					this.log.info('received data (' + response.status + '): ' + JSON.stringify(content));
+					
+					await this.setObjectNotExistsAsync(path + 'responseCode', {
+						type: 'sensor1',
+						common: {
+							name: 'responseCode',
+							type: 'number',
+							role: 'value',
+							read: true,
+							write: false
+						},
+						native: {}
+					});
+					
+					this.setState(path + 'responseCode', {val: response.status, ack: true});
+				}
+				).catch(
+                    (error) => {
+                        if (error.response) {
+                            // The request was made and the server responded with a status code
+
+                            this.log.warn('received error ' + error.response.status + ' response from local sensor ' + sensorIdentifier + ' with content: ' + JSON.stringify(error.response.data));
+                        } else if (error.request) {
+                            // The request was made but no response was received
+                            // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+                            // http.ClientRequest in node.js<div></div>
+                            this.log.error(error.message);
+                        } else {
+                            // Something happened in setting up the request that triggered an Error
+                            this.log.error(error.message);
+                        }
+                    }
+                );
 
 		}
 
 		if (this.config.option2 == true){
-			
+			this.log.info('get Boiler Data');			
+
+			axios({
+				method: 'get',
+				baseURL: 'http://' + configIPAdr + '/',
+				url: '/api?device=boiler&cmd=info',
+				responseType: 'json'
+			}).then(
+				async (response) => {
+					const content = response.data;
+
+					this.log.info('local request done');
+					this.log.info(JSON.stringify(content));
+					this.log.info('received data (' + response.status + '): ' + JSON.stringify(content));
+					
+					await this.setObjectNotExistsAsync(path + 'responseCode', {
+						type: 'sensor1',
+						common: {
+							name: 'responseCode',
+							type: 'number',
+							role: 'value',
+							read: true,
+							write: false
+						},
+						native: {}
+					});
+					
+					this.setState(path + 'responseCode', {val: response.status, ack: true});
+				}
+				).catch(
+                    (error) => {
+                        if (error.response) {
+                            // The request was made and the server responded with a status code
+
+                            this.log.warn('received error ' + error.response.status + ' response from local sensor ' + sensorIdentifier + ' with content: ' + JSON.stringify(error.response.data));
+                        } else if (error.request) {
+                            // The request was made but no response was received
+                            // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+                            // http.ClientRequest in node.js<div></div>
+                            this.log.error(error.message);
+                        } else {
+                            // Something happened in setting up the request that triggered an Error
+                            this.log.error(error.message);
+                        }
+                    }
+                );
 		}
 
 		if (this.config.option3 == true){
-			
+			this.log.info('get Thermostat Data');			
+
+			axios({
+				method: 'get',
+				baseURL: 'http://' + configIPAdr + '/',
+				url: '/api?device=thermostat&cmd=info',
+				responseType: 'json'
+			}).then(
+				async (response) => {
+					const content = response.data;
+
+					this.log.info('local request done');
+					this.log.info(JSON.stringify(content));
+					this.log.info('received data (' + response.status + '): ' + JSON.stringify(content));
+					
+					await this.setObjectNotExistsAsync(path + 'responseCode', {
+						type: 'sensor1',
+						common: {
+							name: 'responseCode',
+							type: 'number',
+							role: 'value',
+							read: true,
+							write: false
+						},
+						native: {}
+					});
+					
+					this.setState(path + 'responseCode', {val: response.status, ack: true});
+				}
+				).catch(
+                    (error) => {
+                        if (error.response) {
+                            // The request was made and the server responded with a status code
+
+                            this.log.warn('received error ' + error.response.status + ' response from local sensor ' + sensorIdentifier + ' with content: ' + JSON.stringify(error.response.data));
+                        } else if (error.request) {
+                            // The request was made but no response was received
+                            // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+                            // http.ClientRequest in node.js<div></div>
+                            this.log.error(error.message);
+                        } else {
+                            // Something happened in setting up the request that triggered an Error
+                            this.log.error(error.message);
+                        }
+                    }
+                );			
 		}
 
 		if (this.config.option4 == true){
-			
+			this.log.info('get Solar Data');			
+
+			axios({
+				method: 'get',
+				baseURL: 'http://' + configIPAdr + '/',
+				url: '/api?device=solar&cmd=info',
+				responseType: 'json'
+			}).then(
+				async (response) => {
+					const content = response.data;
+
+					this.log.info('local request done');
+					this.log.info(JSON.stringify(content));
+					this.log.info('received data (' + response.status + '): ' + JSON.stringify(content));
+					
+					await this.setObjectNotExistsAsync(path + 'responseCode', {
+						type: 'sensor1',
+						common: {
+							name: 'responseCode',
+							type: 'number',
+							role: 'value',
+							read: true,
+							write: false
+						},
+						native: {}
+					});
+					
+					this.setState(path + 'responseCode', {val: response.status, ack: true});
+				}
+				).catch(
+                    (error) => {
+                        if (error.response) {
+                            // The request was made and the server responded with a status code
+
+                            this.log.warn('received error ' + error.response.status + ' response from local sensor ' + sensorIdentifier + ' with content: ' + JSON.stringify(error.response.data));
+                        } else if (error.request) {
+                            // The request was made but no response was received
+                            // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+                            // http.ClientRequest in node.js<div></div>
+                            this.log.error(error.message);
+                        } else {
+                            // Something happened in setting up the request that triggered an Error
+                            this.log.error(error.message);
+                        }
+                    }
+                );
 		}
 
-		if (this.config.option5 == true){
-			
+		if (this.config.option5 == true)
+		{
 			this.log.info('get Dallas Sensor');
-var options
-			var options = {
-				url: "https://" + configIPAdr + "/api?device=dallassensor&cmd=info",
-				json: true
-			};
 			
-			this.log.debug(options.url);
-			this.log.debug(options.json);
+			axios({
+				method: 'get',
+				baseURL: 'http://' + configIPAdr + '/',
+				url: '/api?device=dallassensor&cmd=info',
+				responseType: 'json'
+			}).then(
+				async (response) => {
+					const content = response.data;
 
+					this.log.info('local request done');
+					this.log.info(JSON.stringify(content));
+					this.log.info('received data (' + response.status + '): ' + JSON.stringify(content));
+
+					for (obj in content)
+					{
+						this.log.info(obj);
+						//this.log.info(obj.id);
+						//this.log.info(obj.temp);
+					}
+/*												
+					await this.setObjectNotExistsAsync(obj, {
+						type: 'Dallas Sensor',
+						common: {
+							name: obj,
+							type: 'number',
+							role: 'value',
+							read: true,
+							write: false
+						},
+						native: {}
+					});
+*/
+//					this.setState(obj, {val: response.status, ack: true});
+
+					for (obj2 in content.sensor1)
+					{
+						this.log.info(obj2);
+						this.log.info(response.status);
+						
+						//this.log.info(obj2.id);
+						//this.log.info(obj2.temp);
+																	
+					await this.setObjectNotExistsAsync(obj, {
+						type: 'sate',
+						common: {
+							name: obj2,
+							type: 'value',
+							role: 'value',
+							read: true,
+							write: false
+						},
+						native: {}
+					});
+					
+					this.subscribeStates(obj2);
+					this.setState(obj2, {val: response.status, ack: true});
+				}
+
+									}
+				).catch(
+                    (error) => {
+                        if (error.response) {
+                            // The request was made and the server responded with a status code
+
+                            this.log.warn('received error ' + error.response.status + ' response from local sensor ' + sensorIdentifier + ' with content: ' + JSON.stringify(error.response.data));
+                        } else if (error.request) {
+                            // The request was made but no response was received
+                            // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+                            // http.ClientRequest in node.js<div></div>
+                            this.log.error(error.message);
+                        } else {
+                            // Something happened in setting up the request that triggered an Error
+                            this.log.error(error.message);
+                        }
+                    }
+                );		
+			}
+/*			
 			request(
-				options,
-				function(error, response, content)
 				{
-					if (!error){
+					//http://192.168.0.72/api?device=dallassensor&cmd=info
+					url: "http://" + configIPAdr + "/api?device=dallassensor&cmd=info",
+					json: true	
+				}, 
+				function(error, response, content) 
+				{									
+					//this.log.info(response.statusCode);
+//					this.log.info('Request done');	
+					//this.log.info(content);
+				}
+				);
+				this.log.info(response.statusCode);
+				this.log.info('Request done');
+			}
+					/*
+					if (!error && response.statusCode == 200) {
+						//this.log.info(response.statusCode);
+						//this.log.info('Request done');	
 						this.log.info(content);
-					}else{
+					} else {
+						//this.log.info(response.statusCode);
+						//this.log.info('Request error');
 						this.log.error(error);
 					}
 				}
-			);
-		}
+				);
+			*/				
+		
 
 
 		/*
@@ -109,6 +393,8 @@ var options
 			},
 			native: {},
 		});
+		
+		this.setState(obj, {val: response.status, ack: true});
 
 		// In order to get state updates, you need to subscribe to them. The following line adds a subscription for our variable we have created above.
 		this.subscribeStates('testVariable');
@@ -174,6 +460,7 @@ var options
 	// 	}
 	// }
 
+
 	/**
 	 * Is called if a subscribed state changes
 	 * @param {string} id
@@ -187,7 +474,7 @@ var options
 			// The state was deleted
 			this.log.info(`state ${id} deleted`);
 		}
-	}
+	
 
 	// If you need to accept messages in your adapter, uncomment the following block and the corresponding line in the constructor.
 	// /**
@@ -206,8 +493,11 @@ var options
 	// 		}
 	// 	}
 	// }
-
+	
+	}
 }
+
+
 
 if (require.main !== module) {
 	// Export the constructor in compact mode
@@ -219,5 +509,13 @@ if (require.main !== module) {
 	// otherwise start the instance directly
 	new EmsEspGw();
 }
+	
 
-this.stop();
+
+
+
+/*
+set setTimeout(function() {
+	this.stop();
+}, 10000)
+*/
