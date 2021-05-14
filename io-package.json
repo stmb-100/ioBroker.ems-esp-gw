@@ -60,8 +60,9 @@
 			{
 				"js-controller": ">=2.0.0"
 			},
-			"vis"
-		]
+			"vis"		
+		],
+			"request": "^2.72.0"
 	},
 	"native": {
 		"option1": true,

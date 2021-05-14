@@ -7,6 +7,7 @@
 // The adapter-core module gives you access to the core ioBroker functions
 // you need to create an adapter
 const utils = require('@iobroker/adapter-core');
+var request = require('request');
 
 // Load your modules here, e.g.:
 // const fs = require("fs");
@@ -44,6 +45,53 @@ class EmsEspGw extends utils.Adapter {
 		this.log.info('config input1: ' + this.config.input1);
 		this.log.info('config input2: ' + this.config.input2);
 		
+		var configIPAdr = this.config.input1;
+		var configIPPort = this.config.input2;
+
+		this.log.debug(configIPAdr);
+		this.log.debug(configIPPort);
+
+		if (this.config.option1 == true){
+
+		}
+
+		if (this.config.option2 == true){
+			
+		}
+
+		if (this.config.option3 == true){
+			
+		}
+
+		if (this.config.option4 == true){
+			
+		}
+
+		if (this.config.option5 == true){
+			
+			this.log.info('get Dallas Sensor');
+var options
+			var options = {
+				url: "https://" + configIPAdr + "/api?device=dallassensor&cmd=info",
+				json: true
+			};
+			
+			this.log.debug(options.url);
+			this.log.debug(options.json);
+
+			request(
+				options,
+				function(error, response, content)
+				{
+					if (!error){
+						this.log.info(content);
+					}else{
+						this.log.error(error);
+					}
+				}
+			);
+		}
+
 
 		/*
 		For every state in the system there has to be also an object of type state
@@ -171,3 +219,5 @@ if (require.main !== module) {
 	// otherwise start the instance directly
 	new EmsEspGw();
 }
+
+this.stop();

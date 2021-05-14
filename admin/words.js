@@ -23,7 +23,7 @@ systemDictionary = {
 		'en': 'Thermostat Info',
 		'de': 'Thermostat Info'
 	},
-	'TBoiler Info': {
+	'Boiler Info': {
 		'en': 'Boiler Info',
 		'de': 'Boiler Info'
 	},
@@ -31,10 +31,15 @@ systemDictionary = {
 		'en': 'EMS-ESP-IPAdress',
 		'de': 'EMS-ESP-IPAdresse'
 	},
+	'EMS-ESP-xx': {
+		'en': 'EMS-ESP-ENXX',
+		'de': 'EMS-ESP-DEXX'
+	},
 	'EMS-ESP-IPPort': {
 		'en': 'EMS-ESP-IPPort',
 		'de': 'EMS-ESP-IPPort'
 	},
+	
 	'myColor': {
 		'en': 'myColor',
 		'de': 'meineColor'
